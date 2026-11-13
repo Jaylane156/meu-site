@@ -1,0 +1,831 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+button,
+input,
+select {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+.escondida {
+    display: none !important;
+}
+
+
+/* =========================================
+   TELA 1 - LOGIN
+========================================= */
+
+.pagina {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.conteudo {
+    width: 100%;
+    max-width: 620px;
+    text-align: center;
+    padding: 40px;
+}
+
+.conteudo h1 {
+    color: #3ead44;
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.botao {
+    background-color: #3ead44;
+    color: white;
+    border: 1px solid #319638;
+    border-radius: 4px;
+    padding: 9px 17px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.botao:hover {
+    background-color: #388e3c;
+    transform: translateY(-1px);
+}
+
+.admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.senha {
+    width: 190px;
+    height: 30px;
+    padding: 5px 9px;
+    border: 1px solid #8ac68d;
+    border-radius: 3px;
+    font-size: 11px;
+    outline: none;
+}
+
+.senha:focus {
+    border-color: #3ead44;
+}
+
+.entrar {
+    padding: 8px 19px;
+}
+
+#mensagem {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #d32f2f;
+    min-height: 15px;
+}
+
+.rodape {
+    margin-top: 35px;
+    color: #777777;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   TELAS GERAIS
+========================================= */
+
+.tela {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+
+/* =========================================
+   TELA 2 - TURMAS
+========================================= */
+
+.container-turma {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.container-turma h1 {
+    color: #3ead44;
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #777777;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.turmas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.botao-turma {
+    background-color: #ffffff;
+    color: #3ead44;
+    border: 1px solid #3ead44;
+    border-radius: 6px;
+    padding: 15px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.botao-turma:hover {
+    background-color: #3ead44;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.botao-sair {
+    margin-top: 30px;
+    background-color: #3ead44;
+    color: white;
+    border: 1px solid #319638;
+    border-radius: 4px;
+    padding: 10px 25px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.botao-sair:hover {
+    background-color: #388e3c;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   TELA 3 - CARDÁPIO
+========================================= */
+
+.container-cardapio {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.titulo-cardapio {
+    color: #777777;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+#tituloTurma {
+    color: #3ead44;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.descricao-cardapio {
+    color: #777777;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+.aviso-semana {
+    background-color: #f4faf4;
+    border: 1px solid #d7ead8;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin: 0 auto 25px;
+    max-width: 700px;
+    color: #47714a;
+    font-size: 13px;
+}
+
+.aviso-semana strong {
+    color: #2e7d32;
+}
+
+.semana {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+
+/* =========================================
+   CARDS DOS DIAS
+========================================= */
+
+.dia-cardapio {
+    background-color: #ffffff;
+    border: 1px solid #d8ead9;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 270px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: 0.25s;
+}
+
+.dia-cardapio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.dia-contraturno {
+    border: 2px solid #3ead44;
+}
+
+.dia-contraturno .nome-dia {
+    background-color: #3ead44;
+}
+
+.dia-sem-refeicao {
+    border: 1px solid #e2e2e2;
+    background-color: #fafafa;
+}
+
+.dia-sem-refeicao .nome-dia {
+    background-color: #eeeeee;
+    color: #777777;
+}
+
+.nome-dia {
+    background-color: #3ead44;
+    color: white;
+    padding: 15px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nome-dia span {
+    font-size: 11px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.nome-dia strong {
+    font-size: 14px;
+}
+
+
+/* =========================================
+   STATUS DO CARDÁPIO
+========================================= */
+
+.status {
+    display: inline-block;
+    margin: 15px auto 5px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.status-contraturno {
+    background-color: #e5f5e6;
+    color: #2e7d32;
+}
+
+.status-sem-refeicao {
+    background-color: #eeeeee;
+    color: #777777;
+}
+
+.status-agendada {
+    background-color: #e5f5e6;
+    color: #2e7d32;
+}
+
+
+/* =========================================
+   LISTA DE ALIMENTOS
+========================================= */
+
+.dia-cardapio ul {
+    list-style: none;
+    padding: 10px 15px 15px;
+    text-align: left;
+}
+
+.dia-cardapio li {
+    padding: 9px 5px;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 13px;
+    color: #444444;
+}
+
+.dia-cardapio li:last-child {
+    border-bottom: none;
+}
+
+.dia-cardapio li::before {
+    content: "•";
+    color: #3ead44;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+
+/* Item de contra turno */
+
+.contra-turno-item,
+.alimento-contraturno {
+    color: #2e7d32 !important;
+    font-weight: bold;
+}
+
+.contra-turno-item::before,
+.alimento-contraturno::before {
+    color: #2e7d32 !important;
+}
+
+
+/* =========================================
+   SEM REFEIÇÃO
+========================================= */
+
+.sem-refeicao {
+    padding: 35px 15px;
+    color: #999999;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.sem-refeicao .icone {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   LEGENDA
+========================================= */
+
+.legenda {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    color: #777777;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bolinha {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.bolinha-verde {
+    background-color: #3ead44;
+}
+
+.bolinha-cinza {
+    background-color: #cccccc;
+}
+
+
+/* =========================================
+   BOTÃO VOLTAR CARDÁPIO
+========================================= */
+
+.botao-voltar-cardapio {
+    margin-top: 30px;
+    background-color: #3ead44;
+    color: white;
+    border: 1px solid #319638;
+    border-radius: 5px;
+    padding: 11px 25px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.botao-voltar-cardapio:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   TELA 4 - ADMINISTRADOR
+========================================= */
+
+.container-admin {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    animation: aparecer 0.4s ease;
+}
+
+.container-admin h1 {
+    color: #3ead44;
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.subtitulo-admin {
+    color: #777777;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.admin-card {
+    background-color: #ffffff;
+    border: 1px solid #d8ead9;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.admin-card h2 {
+    color: #3ead44;
+    font-size: 18px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+
+/* =========================================
+   FORMULÁRIO ADMINISTRADOR
+========================================= */
+
+.admin-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.admin-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.admin-campo label {
+    color: #555555;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.admin-campo select,
+.admin-campo input {
+    width: 100%;
+    height: 38px;
+    padding: 7px 10px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    font-size: 13px;
+    outline: none;
+    background-color: #ffffff;
+}
+
+.admin-campo select:focus,
+.admin-campo input:focus {
+    border-color: #3ead44;
+}
+
+
+/* =========================================
+   ADICIONAR ALIMENTO
+========================================= */
+
+.adicionar-alimento {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.adicionar-alimento input {
+    flex: 1;
+    height: 38px;
+    padding: 8px 10px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    font-size: 13px;
+    outline: none;
+}
+
+.adicionar-alimento input:focus {
+    border-color: #3ead44;
+}
+
+
+/* =========================================
+   BOTÕES ADMINISTRADOR
+========================================= */
+
+.botao-admin {
+    background-color: #3ead44;
+    color: white;
+    border: 1px solid #319638;
+    border-radius: 5px;
+    padding: 9px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.botao-admin:hover {
+    background-color: #388e3c;
+    transform: translateY(-1px);
+}
+
+.botao-agendar {
+    display: block;
+    margin: 0 auto 20px;
+    background-color: #3ead44;
+    color: white;
+    border: 1px solid #319638;
+    border-radius: 5px;
+    padding: 11px 22px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.botao-agendar:hover {
+    background-color: #388e3c;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   LISTA ADMINISTRADOR
+========================================= */
+
+.lista-admin {
+    list-style: none;
+    margin-top: 18px;
+    border-top: 1px solid #eeeeee;
+}
+
+.item-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 13px;
+    color: #444444;
+}
+
+.botao-excluir {
+    background-color: #ffffff;
+    color: #d32f2f;
+    border: 1px solid #e0b5b5;
+    border-radius: 4px;
+    padding: 5px 9px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-excluir:hover {
+    background-color: #d32f2f;
+    color: white;
+}
+
+
+/* =========================================
+   FORMULÁRIO DE AGENDAMENTO
+========================================= */
+
+.form-agendamento {
+    display: none;
+    background-color: #f4faf4;
+    border: 1px solid #d7ead8;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.form-agendamento.aberto {
+    display: block;
+}
+
+.form-agendamento h3 {
+    color: #2e7d32;
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+/* =========================================
+   TABELA DE AGENDAMENTOS
+========================================= */
+
+.tabela-agendamentos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.tabela-agendamentos th {
+    background-color: #3ead44;
+    color: white;
+    padding: 10px 7px;
+    text-align: center;
+}
+
+.tabela-agendamentos td {
+    padding: 9px 7px;
+    border-bottom: 1px solid #eeeeee;
+    text-align: center;
+    color: #444444;
+}
+
+.tabela-agendamentos tr:hover {
+    background-color: #f8fcf8;
+}
+
+.status-agendamento {
+    display: inline-block;
+    background-color: #e5f5e6;
+    color: #2e7d32;
+    border-radius: 20px;
+    padding: 5px 9px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.sem-agendamentos {
+    text-align: center;
+    color: #999999;
+    font-size: 12px;
+    padding: 20px;
+}
+
+
+/* =========================================
+   BOTÃO SAIR ADMINISTRADOR
+========================================= */
+
+.botao-sair-admin {
+    margin-top: 10px;
+    background-color: #3ead44;
+    color: white;
+    border: 1px solid #319638;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.botao-sair-admin:hover {
+    background-color: #388e3c;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1000px) {
+    .semana {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 750px) {
+    .semana {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+    .conteudo {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .conteudo h1 {
+        font-size: 23px;
+    }
+
+    .botoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botao {
+        width: 220px;
+    }
+
+    .turmas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .adicionar-alimento {
+        flex-direction: column;
+    }
+
+    .adicionar-alimento .botao-admin {
+        width: 100%;
+    }
+
+    .tabela-agendamentos {
+        font-size: 10px;
+        display: block;
+        overflow-x: auto;
+    }
+
+    .tela {
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .semana {
+        grid-template-columns: 1fr;
+    }
+
+    #tituloTurma {
+        font-size: 27px;
+    }
+
+    .tela {
+        padding: 15px;
+    }
+
+    .turmas {
+        grid-template-columns: 1fr;
+    }
+
+    .container-cardapio {
+        width: 100%;
+    }
+}
